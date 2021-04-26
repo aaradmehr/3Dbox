@@ -1,0 +1,77 @@
+:root{
+    --opcty: .8;
+}
+.sitewrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+
+}
+.scene{
+    width: 300px;
+    height: 200px;
+    perspective: 500px;
+}
+.box{
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    transition: transform 1s;
+}
+.front{
+    background-color: rgba(100, 0, 0, var(--opcty));
+    transform: rotateY(0deg) translateZ(50px);
+
+}
+.back{
+    background-color: rgba(100, 0, 0, var(--opcty));
+    transform: rotateY(180deg) translateZ(50px);
+}
+.right{
+    background-color: rgba(0, 0, 100, var(--opcty));
+    transform: rotateY(90deg) translateZ(150px);
+}
+.left{
+    background-color: rgba(0, 0, 100, var(--opcty));
+    transform: rotateY(-90deg) translateZ(150px);
+}
+.top{
+    background-color: rgba(0, 100, 0, var(--opcty));
+    transform: rotateX(90deg) translateZ(100px);
+}
+.bottom{
+    background-color: rgba(0, 100, 0, var(--opcty));
+    transform: rotateX(-90deg) translateZ(100px);
+}
+.front,
+.back{
+    width: 300px;
+    height: 200px;
+    line-height: 200px;
+}
+.right,
+.left{
+    width: 100px;
+    height: 200px;
+    left: 100px;
+}
+.top,
+.bottom{
+    width: 300px;
+    height: 100px;
+    top: 50px;
+}
+.boxSide{
+    color: white;
+    position: absolute;
+    font-size: 2em;
+    text-align: center;
+}
+.box:hover{
+    transform: translateZ(-50px) rotateY(-180deg); 
+}
