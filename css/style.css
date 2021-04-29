@@ -4,8 +4,7 @@
     font-family: sans-serif, Arial;
 }
 :root{
-    --opcty: .8;
-    transition: all 3s;
+    --opcty: .9;
 }
 .sitewrapper{
     display: flex;
