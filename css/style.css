@@ -1,5 +1,6 @@
 :root{
     --opcty: .8;
+    transition: all 3s;
 }
 .sitewrapper{
     display: flex;
@@ -8,20 +9,24 @@
     align-items: center;
     text-align: center;
     min-height: 100vh;
-
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,229,168,1) 0%, rgba(251,174,222,1) 100.7% );
 }
 .scene{
     width: 300px;
     height: 200px;
     perspective: 500px;
+    position: relative;
+    border: solid 1px white;
+    border-radius: 3px;
+    padding: 32px;
 }
-.box{
+#box{
     width: 300px;
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
     transform: translateZ(-50px);
-    transition: transform 1s;
+    transition: all 1s;
 }
 .front{
     background-color: rgba(100, 0, 0, var(--opcty));
@@ -72,6 +77,62 @@
     font-size: 2em;
     text-align: center;
 }
-.box:hover{
-    transform: translateZ(-50px) rotateY(-180deg); 
+.icon{
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    cursor: pointer;
+    transition: all .7s;
+}
+#arrow-up {
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid white;
+    left: calc(50% - 16px);
+    top: -24px;
+  }
+  #arrow-up:hover {
+    border-bottom: 16px solid black;
+  }
+  #arrow-down {
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 16px solid white;
+    left: calc(50% - 16px);
+    bottom: -24px;
+  }
+  #arrow-down:hover {
+    border-top: 16px solid black;   
+  }
+  #arrow-left {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid white;
+    top: calc(50% - 16px);
+    left: -24px;
+  }
+  #arrow-left:hover {
+    border-right: 16px solid black;   
+  }
+  #arrow-right {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid white;
+    top: calc(50% - 16px);
+    right: -24px;
+  }
+  #arrow-right:hover {
+    border-left: 16px solid black;   
+  }
+  .showright{
+    transform: translateZ(-150px) rotateY( -90deg) !important;  
+}
+.showback{
+    transform: translateZ( -50px) rotateY(-180deg) !important;  
+}
+.showleft{
+    transform: translateZ(-150px) rotateY(-270deg) !important;  
+}
+.showfront{
+    transform: translateZ( -50px) rotateY(0deg) !important;  
 }
