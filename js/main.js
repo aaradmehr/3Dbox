@@ -1,29 +1,15 @@
 var box = document.querySelector('.showfront');
-// var arrowRight = document.getElementById("arrow-right");
-document.getElementById("arrow-right").addEventListener( 'click', goSide );
-document.getElementById("arrow-left").addEventListener( 'click', goSide );
+var switchviewbuttons = document.querySelector('.switchviewbuttons');
+var currentClass = 'showfront';
 
+switchviewbuttons.addEventListener( 'change', changeview );
 
-
-function goSide() {
-    var  currentClass = box.className;
-    switch (currentClass) {
-        case 'showfront':
-            box.classList.remove( currentClass );
-            box.classList.add( 'showright' );
-            break;
-        case 'showright':
-            box.classList.remove( currentClass );
-            box.classList.add( 'showback' );
-            break;   
-        case 'showback':
-            box.classList.remove( currentClass );
-            box.classList.add( 'showleft' );
-            break;
-        case 'showleft':
-            box.classList.remove( currentClass );
-            box.classList.add( 'showfront' );
-            break;                            
+function changeview() {
+    var currentview = switchviewbuttons.querySelector(':checked');
+    var showClass = 'show' + currentview.value;
+    if ( currentClass ) {
+      box.classList.remove( currentClass );
     }
-
+    box.classList.add( showClass );
+    currentClass = showClass;
   }
